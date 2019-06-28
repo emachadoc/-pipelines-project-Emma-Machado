@@ -15,3 +15,6 @@ import statistics
 import numpy as np
 import pprint
 import json
+from fpdf import FPDF
+from reportlab.pdfgen import canvas
+from reportlab.lib.pagesizes import A4, letter
