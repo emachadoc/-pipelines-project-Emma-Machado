@@ -1,35 +1,31 @@
+from sentiment import get_sentiment
+from pprint import pprint
+from select_review import Reviews_manager
 import argparse
-import random
-#import smtplib
-#import getpass
-#from bs4 import BeautifulSoup
-#from selenium import webdriver
-#import requests as req
-#from IPython.display import Image
-#from IPython.core.display import HTML
-#import os
-#from dotenv import load_dotenv
-#load_dotenv()
-#from functools import reduce
-#import pandas as pd
-#import statistics
-#import numpy as np
-#import pprint
-import json
-#from fpdf import FPDF
-from reportlab.pdfgen import canvas
-from reportlab.lib.pagesizes import A4, letter
 
-
-parser = argparse.ArgumentParser(description='Process some words.')
-parser.add_argument('string', metavar='S', type=str, nargs='+',
-                    help='a string for the API')
-parser.add_argument('--sum', dest='score', action='store_const',
-                    const=sum, default=max,
-                    help='return the score from sentiment analysis (default: find the max)')
+parser = argparse.ArgumentParser(description='Process user input reviews or user reviews stored on file.')
+parser.add_argument("-u","--userinput", help="analize review typed by user", action="store_true")
+parser.add_argument("-f","--file", help="file with reviews", default="amazon_reviews.txt")
 
 args = parser.parse_args()
-print(args.accumulate(args.integers))
 
-from clean import clean
-print(clean('amazon_reviews.txt'))
+user_input = args.userinput
+fileName = args.file
+reviews = []
+r = Reviews_manager(fileName)
+
+if user_input == True:
+    user_review = input('Write your reviews or let me select some for you: ')
+    reviews.append(user_review)
+else:
+    reviews = r.get_reviews()
+
+scoring = get_sentiment(reviews)
+
+if user_input == True:
+    print('Your score is {} Do you agree with that?'.format(scoring[0]['score']))
+else:
+    compare = r.compare_reviews(scoring)
+    for e in compare:
+        print('{} \nThe score for this review is {}, the user {} with that\n'.format(e['review'], e['score'], e['compare']))
+
