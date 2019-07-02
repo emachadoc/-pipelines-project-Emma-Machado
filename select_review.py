@@ -1,5 +1,5 @@
 # Select_review function asks the user for an input or randomly selects some reviews from
-# the database.
+# the database. Also compares the score from the API to the stars of the review.
 
 import random
 from clean import clean
