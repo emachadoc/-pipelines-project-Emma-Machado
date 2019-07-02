@@ -12,7 +12,6 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-
 subscription_key = os.getenv("KEY")
 text_analytics_base_url = 'https://westeurope.api.cognitive.microsoft.com/text/analytics/v2.0/sentiment'
 
