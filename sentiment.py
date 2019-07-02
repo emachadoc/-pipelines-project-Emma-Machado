@@ -8,13 +8,8 @@ import requests
 from pprint import pprint
 import random
 
-<<<<<<< HEAD
 subscription_key = '6b54e4de8f394a07a8f2b71daf945b2e'
 text_analytics_base_url = 'https://westeurope.api.cognitive.microsoft.com/text/analytics/v2.0/sentiment'
-=======
-subscription_key = "6b54e4de8f394a07a8f2b71daf945b2e"
-text_analytics_base_url = "https://westeurope.api.cognitive.microsoft.com/text/analytics/v2.0/sentiment"
->>>>>>> aad40b405cf66f93dcd9b388f025c1fe6bb62b77
 
 
 def get_review(id, rp):
@@ -29,34 +24,20 @@ def get_score(id, rp):
             return dict['score']
  
 
-<<<<<<< HEAD
-=======
-
->>>>>>> aad40b405cf66f93dcd9b388f025c1fe6bb62b77
 def get_sentiment(input_reviews):
     request_payload = []
     id = 1
     for i in input_reviews:
         dict = {
-<<<<<<< HEAD
             'language': 'en',
             'id': str(id),
             'text': i
-=======
-            "language": "en",
-            "id": str(id),
-            "text": i
->>>>>>> aad40b405cf66f93dcd9b388f025c1fe6bb62b77
         }
         request_payload.append(dict)
         id += 1
 
     documents = {'documents': request_payload}
-<<<<<<< HEAD
     headers   = {'Ocp-Apim-Subscription-Key': subscription_key}
-=======
-    headers   = {"Ocp-Apim-Subscription-Key": subscription_key}
->>>>>>> aad40b405cf66f93dcd9b388f025c1fe6bb62b77
     response  = requests.post(text_analytics_base_url, headers=headers, json=documents)
     analysis = response.json()
 
