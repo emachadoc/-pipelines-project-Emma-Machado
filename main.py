@@ -4,7 +4,7 @@ from select_review import Reviews_manager
 import argparse
 
 parser = argparse.ArgumentParser(description='Process user input reviews or user reviews stored on file.')
-parser.add_argument('-u','--userinput', help='Analyze review tiped by user', action='store_true')
+parser.add_argument('-u','--userinput', help='Analyse review tiped by user', action='store_true')
 parser.add_argument('-f','--file', help='File with reviews', default='amazon_reviews.txt')
 
 
