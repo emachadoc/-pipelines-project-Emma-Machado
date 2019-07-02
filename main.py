@@ -28,4 +28,3 @@ else:
     compare = r.compare_reviews(scoring)
     for e in compare:
         print('{} \nThe score for this review is {}, the user {} with that\n'.format(e['review'], e['score'], e['compare']))
-
