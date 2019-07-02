@@ -7,7 +7,7 @@ TESTING MICROSOFT TEXT ANALYTICS
 
 DESCRIPTION:
 
-The aim of this project is to test Microsoft Text Analytics sentiment from Azure Cognitive Services (https://any-api.com/azure_com/cognitiveservices_TextAnalytics/docs/API_Description) analyzing raw text from Amazon reviews (https://www.kaggle.com/bittlingmayer/amazonreviews) for clues about positive or negative sentiment. This API returns a sentiment score between 0 and 1 for each review, where 1 is the most positive. It should match with the stars given by the customer in his Amazon review. Reviews are divided into ‘label 1’, which are negative reviews, and ‘label 2’, which are positive ones.
+The aim of this project is to test Microsoft Text Analytics sentiment from Azure Cognitive Services (https://any-api.com/azure_com/cognitiveservices_TextAnalytics/docs/API_Description) analysing raw text from Amazon reviews (https://www.kaggle.com/bittlingmayer/amazonreviews) for clues about positive or negative sentiment. This API returns a sentiment score between 0 and 1 for each review, where 1 is the most positive. It should match with the stars given by the customer in his Amazon review. Reviews are divided into ‘label 1’, which are negative reviews, and ‘label 2’, which are positive ones.
 
 REPO FILES:
 
