@@ -24,7 +24,6 @@ def get_score(id, rp):
             return dict['score']
  
 
-
 def get_sentiment(input_reviews):
     request_payload = []
     id = 1

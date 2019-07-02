@@ -8,6 +8,7 @@ class Reviews_manager():
     def __init__(self, file_name):
         self.file = file_name
     
+
     def get_reviews(self, quantity=3):
         u = clean(self.file)
         self.label1 = u[0]
@@ -16,6 +17,7 @@ class Reviews_manager():
         reviews2 = random.choices(self.label2, k=quantity)
         reviews = random.choices(reviews1 + reviews2, k=quantity)
         return reviews
+
 
     def compare_reviews(self, scoring):
         compare = []
