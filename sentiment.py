@@ -7,8 +7,13 @@
 import requests
 from pprint import pprint
 import random
+import os
+from dotenv import load_dotenv
 
-subscription_key = '6b54e4de8f394a07a8f2b71daf945b2e'
+load_dotenv()
+
+
+subscription_key = os.getenv("KEY")
 text_analytics_base_url = 'https://westeurope.api.cognitive.microsoft.com/text/analytics/v2.0/sentiment'
 
 
